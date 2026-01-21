@@ -12,7 +12,8 @@ body {
   font-family: "Bitcount Single", sans-serif;
 }
 
-h1 {font-family: Verdana, Geneva, Tahoma, sans-serif;
+h1 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   text-align: center;
   color: rgb(5, 5, 120);
   font-size: 30px;
@@ -34,24 +35,24 @@ section {
 }
 
 .experience {
-    list-style: none;
-    padding-inline-start: 0;
-    
+  list-style: none;
+  padding-inline-start: 0;
 }
 .experience li {
-    background-color: beige;
-    margin-bottom: 10px;
-    padding: 10px;
-    font-size: 16.5px;
+  background-color: beige;
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 16.5px;
 }
-#About, #Experience {
-    margin-bottom: 5px;
-    width: 50%;
+#About,
+#Experience {
+  margin-bottom: 5px;
+  width: 50%;
 }
 #Connect li {
-    color: blue;
-    display:block;
-    padding: 5px;
-    margin-bottom: 5px;
-    list-style-type: disc;
+  color: blue;
+  display: block;
+  padding: 5px;
+  margin-bottom: 5px;
+  list-style-type: disc;
 }
