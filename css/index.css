@@ -1,3 +1,5 @@
+/* +++Base styles (Mobile)+++ */
+
 header {
   display: flex;
   flex-direction: column;
@@ -7,7 +9,7 @@ header {
 .nav {
   position: fixed;
   top: 0;
-  width: 100vw;
+  width: 100%;
 }
 .nav ul {
   list-style-type: none;
@@ -24,33 +26,66 @@ header {
   color: white;
   padding: 10px 20px;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 0.8rem;
 }
 .nav ul li a:hover {
   background-color: #5ac8e7;
 }
 body {
-  justify-self: center;
+  text-align: center;
   background-color: rgb(214, 238, 244);
   color: rgb(12, 6, 100);
-  font-family: "Bitcount Single", sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  padding: 1rem;
+  margin: auto;
 }
 
+
+
+#About,
+#Experience,
+#Skills,
+#Projects,
+#Connect {
+  display: flex;
+  width: 90%;
+  margin: auto;
+  flex-direction: column;
+  align-items: center;
+}
+.connect ul {
+  display: flex;
+  color: blue;
+  padding: 0.5rem;
+  width: 80%;
+  margin: auto;
+  justify-content: center;
+  list-style: none;
+  gap: 3rem;
+}
+#Connect img {
+  width: 50px;
+  height: 50px;
+}
+#Connect a:hover img {
+  transform: rotate(10deg) scale(1.4);
+}
 h1 {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   text-align: center;
   color: rgb(5, 5, 120);
-  font-size: 30px;
+  font-size: 1.5rem;
   font-weight: 800;
   font-style: oblique;
   text-transform: uppercase;
-  letter-spacing: 3px;
+  letter-spacing: 0.13em;
   background-color: #5ac8e7;
   border-radius: 5px;
 }
 
 h2 {
-  font-size: 24px;
+  font-size: 1.2rem;
   font-weight: 600;
   color: rgb(7, 7, 190);
   text-align: center;
@@ -58,19 +93,27 @@ h2 {
 
 section {
   margin-bottom: 2em;
-  padding: 15px;
-  scroll-margin-top: 370px;
+  padding: 1rem;
+  scroll-margin-top: 4rem;
 }
-
+.connect{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  /* list-style: none; */
+  padding-inline: 0;
+}
 .experience {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
   list-style: none;
-  padding-inline-start: 0;
+  padding-inline: 0;
 }
 .experience li {
   background-color: #98def1;
-  margin-bottom: 10px;
-  padding: 10px;
-  font-size: 16.5px;
+  margin-bottom: 0.3rem;
+  padding: 0.3rem;
   border-radius: 5px;
 }
 
@@ -79,33 +122,46 @@ section {
   justify-content: space-between;
 }
 
-#About,
-#Experience,
-#Skills,
-#Projects,
-#Connect {
-  display: flex;
-  margin-bottom: 20px;
-  width: 90%;
-  margin: auto;
-  flex-direction: column;
-  align-items: center;
+/* +++ Tablet +++ */
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 1.55rem;
+    font-style: normal;
+    color: rgb(123, 10, 203);
+  }
+  h2 {
+    font-size: 1.3rem;
+    color: #9d06b8;
+  }
+  .nav ul {
+    padding: 0.5rem;
+    background-color: rgb(107, 1, 156);
+  }
+  .experience {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.3rem;
+  }
+  }
+
+  /* +++ Desktop +++ */
+
+@media (min-width: 1024px) {
+  .experience {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+.nav ul li a {
+  color: rgb(239, 135, 220);
+  font-size: 1.2rem;
 }
-#Connect ul {
-  display: flex;
-  color: blue;
-  padding: 0;
-  margin-bottom: 20px;
-  width: 80%;
-  margin: auto;
-  justify-content: center;
-  list-style: none;
-  gap: 50px;
+body {
+  font-size: 1.2rem;
+  padding: 2rem;
 }
-#Connect img {
-  width: 50px;
-  height: 50px;
+h2 {
+  font-size: 1.5rem;
+  color: rgb(7, 7, 190);
+  font-style: oblique;
 }
-#Connect a:hover img {
-  transform: rotate(10deg) scale(1.4);
 }
