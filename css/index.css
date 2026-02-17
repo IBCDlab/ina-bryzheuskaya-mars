@@ -41,8 +41,6 @@ body {
   margin: auto;
 }
 
-
-
 #About,
 #Experience,
 #Skills,
@@ -103,14 +101,17 @@ section {
   /* list-style: none; */
   padding-inline: 0;
 }
-.experience {
+.experience,
+.skills {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
   list-style: none;
   padding-inline: 0;
 }
-.experience li {
+
+.experience,
+.skills li {
   background-color: #98def1;
   margin-bottom: 0.3rem;
   padding: 0.3rem;
@@ -121,6 +122,7 @@ section {
   display: flex;
   justify-content: space-between;
 }
+
 
 /* +++ Tablet +++ */
 
@@ -138,7 +140,8 @@ section {
     padding: 0.5rem;
     background-color: rgb(107, 1, 156);
   }
-  .experience {
+  .experience,
+  .skills {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.3rem;
   }
@@ -149,6 +152,10 @@ section {
 @media (min-width: 1024px) {
   .experience {
     grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+    .skills {
+    grid-template-columns: repeat(6, 1fr);
     gap: 2rem;
   }
 .nav ul li a {
