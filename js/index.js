@@ -32,22 +32,22 @@ for (let i = 0; i < skills.length; i++) {
 const messagesForm = document.querySelector("form[name='leave_message']");
 messagesForm.addEventListener('submit', function(event) {
 event.preventDefault();
-  const userName = event.target.userName.value;
-  const userEmail = event.target.userEmail.value;
-  const userMessage = event.target.userMessage.value;
+  const usersName = event.target.usersName.value;
+  const usersEmail = event.target.usersEmail.value;
+  const usersMessage = event.target.usersMessage.value;
 
-  console.log(userName, userEmail, userMessage);
+  console.log(usersName, usersEmail, usersMessage);
 
   const messageSection = document.querySelector("#Messages");
   const messageList = messageSection.querySelector("ul");
   const newMessage = document.createElement('li');
-  const userNameLink = document.createElement('a');
-  userNameLink.innerText = userName;
-  userNameLink.href = `mailto: ${userEmail}`;
-  const userMessageText = document.createElement('span');
-  userMessageText.innerText = userMessage;
-newMessage.appendChild(userNameLink);
-newMessage.appendChild(userMessageText);
+  const usersNameLink = document.createElement('a');
+  usersNameLink.innerText = usersName;
+  usersNameLink.href = `mailto: ${usersEmail}`;
+  const usersMessageText = document.createElement('span');
+  usersMessageText.innerText = usersMessage;
+newMessage.appendChild(usersNameLink);
+newMessage.appendChild(usersMessageText);
 
 //new button
 
