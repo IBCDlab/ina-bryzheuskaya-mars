@@ -62,3 +62,30 @@ removeButton.addEventListener('click', function() {
   messageList.appendChild(newMessage);
   messagesForm.reset();
 })
+
+// Fetch
+
+fetch('https://api.github.com/users/IBCDlab2/repos')
+
+.then(function(response) {
+  console.log(response);
+    return response.json();
+  })
+
+  .then(function(data) {
+    const repositories = data;
+    console.log(repositories);
+  })
+
+  .catch(function(error) {
+    console.log("Something went wrong:", error);
+  })
+
+// Repositories 
+
+const projectSection = document.querySelector(#Projects);
+const projectList = projectSection.querySelector('ul');
+
+for (let i = 0; i < )
+
+
