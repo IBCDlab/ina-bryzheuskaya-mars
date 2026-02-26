@@ -49,7 +49,7 @@ event.preventDefault();
 newMessage.appendChild(userNameLink);
 newMessage.appendChild(userMessageText);
 
-//new button
+//add remove button
 
 const removeButton = document.createElement('button');
 removeButton.innerText = 'remove';
@@ -63,29 +63,37 @@ removeButton.addEventListener('click', function() {
   messagesForm.reset();
 })
 
-// Fetch
+// Fetch. Get the repositories from github
 
-fetch('https://api.github.com/users/IBCDlab2/repos')
+fetch('https://api.github.com/users/IBCDlab/repos')
 
 .then(function(response) {
-  console.log(response);
+
+//get the response and check for error
+  if (!response.ok) {
+    throw new Error ("Request failed");
+  }
     return response.json();
   })
 
   .then(function(data) {
+
+    //save ison data
     const repositories = data;
     console.log(repositories);
-  })
 
-  .catch(function(error) {
-    console.log("Something went wrong:", error);
-  })
-
-// Repositories 
-
-const projectSection = document.querySelector(#Projects);
+const projectSection = document.querySelector("#Projects");
 const projectList = projectSection.querySelector('ul');
 
-for (let i = 0; i < )
+//loop through each repository and create li
+for (let i = 0; i < repositories.length; i++) {
+  const project = document.createElement("li");
+  project.innerText = repositories[i].name;//присваиваем текст по имени репозитория
+  projectList.appendChild(project);
+}
+})
 
-
+// error if fetch fails.
+.catch(function(error) {
+    console.log("Something went wrong:", error);
+})
