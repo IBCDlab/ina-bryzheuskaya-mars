@@ -16,7 +16,7 @@ footer.appendChild(copyright);
 
 // Skills
 
-const skills = ["HTML", "CSS", "JavaScript", "Git", "GitHub"];
+const skills = ["HTML", "CSS", "JavaScript", "Git", "GitHub", "VS Code"];
 
 const skillsSection = document.querySelector("#Skills");
 const skillsList = skillsSection.querySelector("ul");
@@ -30,8 +30,8 @@ for (let i = 0; i < skills.length; i++) {
 // Leave a Message
 
 const messagesForm = document.querySelector("form[name='leave_message']");
-messagesForm.addEventListener('submit', function(event) {
-event.preventDefault();
+messagesForm.addEventListener("submit", function (event) {
+  event.preventDefault();
   const userName = event.target.userName.value;
   const userEmail = event.target.userEmail.value;
   const userMessage = event.target.userMessage.value;
@@ -40,60 +40,62 @@ event.preventDefault();
 
   const messageSection = document.querySelector("#Messages");
   const messageList = messageSection.querySelector("ul");
-  const newMessage = document.createElement('li');
-  const userNameLink = document.createElement('a');
+  const newMessage = document.createElement("li");
+  const userNameLink = document.createElement("a");
   userNameLink.innerText = userName;
   userNameLink.href = `mailto: ${userEmail}`;
-  const userMessageText = document.createElement('span');
+  const userMessageText = document.createElement("span");
   userMessageText.innerText = userMessage;
-newMessage.appendChild(userNameLink);
-newMessage.appendChild(userMessageText);
+  newMessage.appendChild(userNameLink);
+  newMessage.appendChild(userMessageText);
 
-//add remove button
+  //add remove button
 
-const removeButton = document.createElement('button');
-removeButton.innerText = 'remove';
-removeButton.type = 'button';
-removeButton.addEventListener('click', function() {
-  const entry = removeButton.parentNode;
-  entry.remove();
-  })
+  const removeButton = document.createElement("button");
+  removeButton.innerText = "remove";
+  removeButton.type = "button";
+  removeButton.addEventListener("click", function () {
+    const entry = removeButton.parentNode;
+    entry.remove();
+  });
   newMessage.appendChild(removeButton);
   messageList.appendChild(newMessage);
   messagesForm.reset();
-})
+});
 
 // Fetch. Get the repositories from github
 
-fetch('https://api.github.com/users/IBCDlab/repos')
-
-.then(function(response) {
-
-//get the response and check for error
-  if (!response.ok) {
-    throw new Error ("Request failed");
-  }
+fetch("https://api.github.com/users/IBCDlab/repos")
+  .then(function (response) {
+    //get the response and check for error
+    if (!response.ok) {
+      throw new Error("Request failed");
+    }
     return response.json();
   })
 
-  .then(function(data) {
-
+  .then(function (data) {
     //save ison data
     const repositories = data;
     console.log(repositories);
 
-const projectSection = document.querySelector("#Projects");
-const projectList = projectSection.querySelector('ul');
+    const projectSection = document.querySelector("#Projects");
+    const projectList = projectSection.querySelector("ul");
 
-//loop through each repository and create li
-for (let i = 0; i < repositories.length; i++) {
-  const project = document.createElement("li");
-  project.innerText = repositories[i].name;//присваиваем текст по имени репозитория
-  projectList.appendChild(project);
-}
-})
+    //loop through each repository and create li
+    for (let i = 0; i < repositories.length; i++) {
+      const li = document.createElement("li");
+      const project = document.createElement("a");
 
-// error if fetch fails.
-.catch(function(error) {
+      project.href = repositories[i].html_url;
+      project.target = "_blank";
+      project.textContent = repositories[i].name;
+      li.appendChild(project);
+      projectList.appendChild(li);
+    }
+  })
+
+  // error if fetch fails.
+  .catch(function (error) {
     console.log("Something went wrong:", error);
-})
+  });
