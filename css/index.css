@@ -17,7 +17,6 @@ header img {
   width: 40%;
   max-width: 250px;
   border-radius: 50%;
-  margin-top: 60px;
 }
 
 /*   Navigation   */
@@ -26,6 +25,7 @@ header img {
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 1000;
 }
 
 .nav ul {
@@ -61,6 +61,14 @@ body {
   margin: 0;
   line-height: 1.6;
 }
+
+#theme-toggle {
+  width: auto;
+  font-size: 0.7rem;
+  margin: 65px 5px 5px auto;
+  padding: 7px 3px;
+}
+
 /*   section   */
 
 #About,
@@ -97,6 +105,7 @@ h1 {
   letter-spacing: 0.13em;
   background-color: #ff8f70;
   border-radius: 6px;
+  padding: 0.5rem 1rem;
 }
 
 h2 {
@@ -153,7 +162,8 @@ h2 {
   margin: 0.5rem auto;
   padding: 0.5rem;
   width: 90%;
-  border: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 #LeaveAMessage button {
   margin: 0.5rem auto;
@@ -221,29 +231,57 @@ button[type="button"] {
 
 .connect {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
   list-style: none;
   padding-inline: 0;
 }
 
-.connect ul {
-  display: flex;
-  padding: 0.5rem;
-  width: 80%;
-  margin: auto;
-  justify-content: center;
-  list-style: none;
-  gap: 3rem;
-}
-
 #Connect img {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
 }
 
 #Connect a:hover img {
   transform: rotate(10deg) scale(1.1);
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.8rem;
+  color: #333;
+}
+
+.dark-theme {
+  background-color: #1e1e1e;
+  color: #f5f5f5;
+}
+
+.dark-theme h2,
+.dark-theme .projects a,
+.dark-theme .form-hint {
+  color: #f5f5f5;
+}
+
+.dark-theme .experience li,
+.dark-theme .skills li,
+.dark-theme .projects li,
+.dark-theme #Messages ul li {
+  background-color: #333;
+  color: #f5f5f5;
+  border: 1px solid #555;
+}
+
+.dark-theme #LeaveAMessage input,
+.dark-theme #LeaveAMessage textarea {
+  background-color: #2b2b2b;
+  color: #fff;
+  border: 1px solid #555;
+}
+
+.dark-theme .nav ul {
+  background-color: #111;
 }
 
 /* +++ Tablet +++ */
@@ -346,7 +384,7 @@ button[type="button"] {
     width: 40%;
   }
   #LeaveAMessage button {
-    width: 10%;
+    width: 20%;
     padding: 0.7rem;
     font-size: 1.2rem;
   }

@@ -5,7 +5,7 @@
 ## About the project
 This is a personal portfolio website for Ina Bryzheuskaya, created as a final project for the Code the Dream Intro to Programming course. The site presents Ina’s background, experience, technical skills, and GitHub projects, and includes a contact form where visitors can leave a message.
 
-## Live Demo
+## View project
 https://ibcdlab.github.io/ina-bryzheuskaya-mars
 
 ## Tech stack
